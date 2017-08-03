@@ -1,0 +1,25 @@
+﻿<html>
+<head>
+<meta charset="UTF-8">
+<title>JS模板引擎实例</title>
+<script src="template.js"></script>
+</head>
+
+<body>
+<h1>模板引擎-数组</h1>
+<div id="content"></div>
+<script id="test" type="text/html">
+<ul>
+{{each $data as item i}} 
+       <li>name:{{item.name}}   age:{{item.age}}</li>
+ {{/each}}
+</ul>
+</script>
+
+<script>
+var data= [{name: 'aaa',age: '12', gender: 'male'},{name: 'bbb', age: '22', gender: 'female'}]; 
+var html = template('test', data);
+document.getElementById('content').innerHTML = html;
+</script>
+</body>
+</html>

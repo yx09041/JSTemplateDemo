@@ -1,0 +1,22 @@
+﻿<html>
+<head>
+<meta charset="UTF-8">
+<title>JS模板引擎实例</title>
+<script src="template.js"></script>
+</head>
+
+<body>
+<h1>模板引擎-对象</h1>
+<div id="content"></div>
+<script id="test" type="text/html">
+name:{{name}}<br>
+age:{{age}}
+</script>
+
+<script>
+var data={name:'yxtic',age:'0'};
+var html = template('test', data);
+document.getElementById('content').innerHTML = html;
+</script>
+</body>
+</html>

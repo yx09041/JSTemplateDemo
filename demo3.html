@@ -1,0 +1,32 @@
+﻿<html>
+<head>
+<meta charset="UTF-8">
+<title>JS模板引擎实例</title>
+<script src="template.js"></script>
+</head>
+
+<body>
+<h1>模板引擎-组合</h1>
+<div id="content"></div>
+<script id="test" type="text/html">
+<ul>
+<h1>{{title}}</h1>
+<ul>
+    {{each list as value i}}
+        <li>索引 {{i + 1}} ：{{value}}</li>
+    {{/each}}
+</ul>
+</ul>
+</script>
+
+<script>
+var data = {
+	title: 'yxtic',
+	isAdmin: true,
+	list: ['文艺', '博客', '摄影', '电影', '民谣', '旅行', '吉他']
+}; 
+var html = template('test', data);
+document.getElementById('content').innerHTML = html;
+</script>
+</body>
+</html>
